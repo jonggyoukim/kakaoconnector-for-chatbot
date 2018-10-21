@@ -138,7 +138,7 @@
 
 1. 앱URL을 입력한 후 `API 테스트`를 클릭하여 테스트 완료합니다. 통과되지 않으면 저장이 되지 않습니다.
 
-    ![Alt text](https://monosnap.com/image/I5tX1WKqjT58LSkf2AeiTYIIWnZDkW.png)
+    <kbd>![Alt text](https://monosnap.com/image/I5tX1WKqjT58LSkf2AeiTYIIWnZDkW.png)</kbd>
 
 1. 하위의 API형 저장하기를 눌러 저장 한 후, 시작하기를 눌러 시작을 합니다.
 
