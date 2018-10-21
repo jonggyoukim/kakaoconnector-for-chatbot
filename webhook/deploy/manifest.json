@@ -1,0 +1,9 @@
+{
+    "runtime": {
+        "majorVersion": "8"
+    },
+    "command": "java -jar kakaotalk-0.9.jar",
+    "release": {},
+    "notes": "Oracle chat bots - kakao connector"
+}
+
