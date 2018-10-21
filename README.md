@@ -25,7 +25,7 @@
 
 1. 채널을 생성하기 위하여 오른쪽 아이콘에서 `Settings` 아이콘을 클릭하고 `Channels` 를 클릭하여 채널을 생성할 화면을 엽니다. 
 
-    ![Alt text](https://monosnap.com/image/85eZgcPEY7mIFVguiOk0OLXv3nLXvD.png)
+    <kbd>![Alt text](https://monosnap.com/image/85eZgcPEY7mIFVguiOk0OLXv3nLXvD.png)</kbd>
 1. `+ Channel`을 클릭하고 다음을 입력합니다.
     - Name : kakao (원하는 이름을 입력합니다)
     - Description : kakao channel (원하는 설명을 입력합니다)
@@ -33,11 +33,11 @@
     - Platform Version : 1.0 (Simple Model)
     - Outgoing Webhook URI : https://localhost
 
-    ![Alt text](https://monosnap.com/image/fCkFA4dkzumIJwgCDAaym1HTyXPjsA.png)
+    <kbd>![Alt text](https://monosnap.com/image/fCkFA4dkzumIJwgCDAaym1HTyXPjsA.png)</kbd>
 
 1. `Create`를 클릭하면 다음과 같이 채널이 만들어집니다.
 
-    ![Alt text](https://monosnap.com/image/GaH5JcEzWphl6Lpek0GMC4NiBNEzwL.png)
+    <kbd>![Alt text](https://monosnap.com/image/GaH5JcEzWphl6Lpek0GMC4NiBNEzwL.png)</kbd>
 
     다음의 두 항목은 카카오 커넥터를 만들 때 참조될 항목입니다.
     - Secret Key
@@ -57,7 +57,7 @@
 
 1. STS(SpringToolSuite4)에서 해당 소스를 불러옵니다. 방법은 이클립스와 동일합니다.
 
-    ![Alt text](https://monosnap.com/image/Vq4x0tEePF1NTLsMTGeI1M8jQc4g5n.png)
+    <kbd>![Alt text](https://monosnap.com/image/Vq4x0tEePF1NTLsMTGeI1M8jQc4g5n.png)</kbd>
 
 1. src/main/resources/application.properties 을 열어 수정합니다.
 
@@ -90,14 +90,14 @@
 
 1. Application Continaer 의 서비스 콘솔을 엽니다.
 
-    ![Alt text](https://monosnap.com/image/iu06DHsFnVW5LERWe4DoalWUsxIJH2.png)  
+    <kbd>![Alt text](https://monosnap.com/image/iu06DHsFnVW5LERWe4DoalWUsxIJH2.png)</kbd>
 
     만약 Application Container 가 보이지 않으면 "`대시보드 사용자정의`" 를 눌러 Application Container 가 보이도록 설정합니다.
 
-    ![Alt text](https://monosnap.com/image/jimvaQKmw5zLpHKu3nm2wxJFGwAzIP.png)
+    <kbd>![Alt text](https://monosnap.com/image/jimvaQKmw5zLpHKu3nm2wxJFGwAzIP.png)</kbd>
 
 1. 콘솔이 열리면 우측의 "`Create Application`" 을 클릭합니다. 팝업이 뜨면 "`Java SE`" 를 선택합니다.
-    ![Alt text](https://monosnap.com/image/at8GZhxr6ZcKtwa3iuWvkoZGyhsBAY.png)
+    <kbd>![Alt text](https://monosnap.com/image/at8GZhxr6ZcKtwa3iuWvkoZGyhsBAY.png)</kbd>
 
 1. 다시 Create Application 콘솔이 열리면 다음과 같이 입력합니다.
     - Name : kakaotalk (원하는 이름을 입력합니다.)
@@ -106,12 +106,13 @@
     - Memory : 1
     - Region : uscom-central-1
 
-    ![Alt text](https://monosnap.com/image/N3SEtmJLGpV9ZeWuAS7HBGPVG1SaXt.png)
+    <kbd>![Alt text](https://monosnap.com/image/N3SEtmJLGpV9ZeWuAS7HBGPVG1SaXt.png)</kbd>
 
     입력후 Create 버튼을 누릅니다. 
 
 1. 약 2분정도 후에 애플리케이션이 구동중인 것을 볼 수 있습니다.
-    ![Alt text](https://monosnap.com/image/0zQVkNgzvVf4vCrrWwiUi9VzZRzwbd.png)
+
+    <kbd>![Alt text](https://monosnap.com/image/0zQVkNgzvVf4vCrrWwiUi9VzZRzwbd.png)</kbd>
 
     애플리케이션에 접근할 수 있는 URL의 빨간 네모안의 URL입니다. 이 URL은 아래의 `카카오 플러스 친구`에서 입력할 값입니다.
 
@@ -123,22 +124,22 @@
 
 1. 우선 카카오톡과 오라클 챗봇을 연결하기 위해서는 플러스 친구 아이디가 필요합니다. https://business.kakao.com/ 에 접속해서 플러스 친구를 만듭니다.
 
-    ![Alt text](https://monosnap.com/image/gxflnSsZPbzwScV6JCQklM2XrhJ6Up.png)
+    <kbd>![Alt text](https://monosnap.com/image/gxflnSsZPbzwScV6JCQklM2XrhJ6Up.png)</kbd>
 
 1. 만들어진 플러스 친구를 클릭하고 왼쪽 메뉴에서 `스마트채팅`을 클릭하고 나온 화면에서 `API형`의 수정마크를 클릭합니다.
 
-    ![Alt text](https://monosnap.com/image/y3Hkj0dgSZ3zXpwtEXJ3qNH3DdT91E.png)
+    <kbd>![Alt text](https://monosnap.com/image/y3Hkj0dgSZ3zXpwtEXJ3qNH3DdT91E.png)</kbd>
 
 1. 다음의 항목을 입력합니다.
     - 앱이름 : chatbot (원하는 이름을 입력합니다)
     - 앱URL : ACCS에 배포한 후 출력되는 url 을 입력합니다.
     - 앱설명 : oracle chatbot  (원하는 설명을 입력합니다)
 
-    ![Alt text](https://monosnap.com/image/TFyyFBeJCxx0E9HMYN0tJPPN5lVf1R.png)
+    <kbd>![Alt text](https://monosnap.com/image/TFyyFBeJCxx0E9HMYN0tJPPN5lVf1R.png)</kbd>
 
 1. 앱URL을 입력한 후 `API 테스트`를 클릭하여 테스트 완료합니다. 통과되지 않으면 저장이 되지 않습니다.
 
-    ![Alt text](https://monosnap.com/image/I5tX1WKqjT58LSkf2AeiTYIIWnZDkW.png)
+    <kbd>![Alt text](https://monosnap.com/image/I5tX1WKqjT58LSkf2AeiTYIIWnZDkW.png)</kbd>
 
 1. 하위의 API형 저장하기를 눌러 저장 한 후, 시작하기를 눌러 시작을 합니다.
 
