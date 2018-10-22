@@ -37,7 +37,7 @@
 
 1. `Create`를 클릭하면 다음과 같이 채널이 만들어집니다.
 
-    <kbd>![Alt text](https://monosnap.com/image/GaH5JcEzWphl6Lpek0GMC4NiBNEzwL.png)</kbd>
+    <kbd>![Alt text](https://monosnap.com/image/OayYxCc5F9fkNadWyOtGYrpcHNYUvN.png)</kbd>
 
     다음의 두 항목은 카카오 커넥터를 만들 때 참조될 항목입니다.
     - Secret Key
@@ -118,6 +118,24 @@
 
     만약 계속 진행중 보인다면 우측의 리로드 아이콘을 클릭하십시오.
 
+이제 카카오톡에서 보내는 메시지를 받을 수 있는 커넥터를 만들었습니다.
+앞으로 할 일은 다음 두 가지입니다.
+1. 오라클 봇에서 커넥터로 응답줄 수 있게 설정하기
+1. 카카오톡에서 커넥터로 메시지 줄 수 있게 연결하기
+
+# 오라클 챗봇 커넥터로 응답하게 업데이트 하기
+
+이제 오라클 챗봇에서 응답하는 메시지를 받을 수 있는 커넥터가 생성되었기 때문에 이 주소를 업데이트 하겠습니다.
+
+![Alt text](https://monosnap.com/image/RVJ3KtIgK33g2uoVP3XjO7YzDDcwmD.png)
+
+오라클 봇의 Outgoing Webhook 부분에 앞에서 생성된 ACCS의 주소를 넣어줍니다.
+그리고 context 로 "kakao"를 줍니다.
+~~~
+https://kakaotalk-xxxxxx.oraclecloud.com:443/kakao
+~~~
+
+그리고 하위의 Channel Enabled 를 true 로 합니다.
 
 
 # 카카오 플러스 친구
