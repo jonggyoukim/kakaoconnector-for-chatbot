@@ -53,10 +53,10 @@ import oracle.cloud.bots.kakao.model.Photo;
 public class KakaoController {
 	private static int WAIT_TIME =4500;
 
-	@Value("${oracle.bots.kakao.uri}")
+//	@Value("${oracle.bots.kakao.uri}")
 	private String botUri;
-
-	@Value("${oracle.bots.kakao.secret}")
+//
+//	@Value("${oracle.bots.kakao.secret}")
 	private String botSecret;
 
 	@SuppressWarnings("rawtypes")
@@ -130,11 +130,15 @@ public class KakaoController {
 	@RequestMapping(value = "/message", method = RequestMethod.POST)
 	@ResponseBody
 	public String message(@RequestHeader Map<String, Object> headers, @RequestBody Map<String, Object> bodyMap) {
+		botUri = System.getenv("BOT_URL");
+		botSecret = System.getenv("BOT_SECRET");
+		
 		logger.info("\n\n\n/message -----------------------------------------");
 		logger.info("/message botUri=[" + botUri + "]");
 		logger.info("/message secret=[" + botSecret + "]");
 		logger.info("/message message body=[" + bodyMap + "]");
 
+			
 		KAKAO kakao = null;
 		String response = null;
 
@@ -150,6 +154,13 @@ public class KakaoController {
 			return "{ \"message\":{ \"text\" : \"" + msg + "\" } }";
 		}
 
+
+		if(botUri == null || botUri.length() == 0 || botSecret == null || botSecret.length() == 0) {
+			String result = "{ \"message\":{ \"text\" : botUri[" + botUri + "], botSecret[" + botSecret + "] } }";
+			logger.info(result);
+			userMap.remove(userId);
+		}
+		
 		try {
 			// 카카오로 보낼 메시지를 만든다. - payload
 			String payload = makePayload(bodyMap);
