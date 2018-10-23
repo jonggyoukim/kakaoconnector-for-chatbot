@@ -105,7 +105,7 @@
 
 1. 약 2분정도 후에 애플리케이션이 구동중인 것을 볼 수 있습니다.
 
-    <kbd>![Alt text](https://monosnap.com/image/0zQVkNgzvVf4vCrrWwiUi9VzZRzwbd.png)</kbd>
+    <kbd>![Alt text](https://monosnap.com/image/F36thbwup9rDum0VVbtdatSoQgydLV.png)</kbd>
 
     애플리케이션에 접근할 수 있는 URL의 빨간 네모안의 URL입니다. 이 URL은 아래의 `카카오 플러스 친구`에서 입력할 값입니다.
 
@@ -125,10 +125,10 @@
     - WAIT_TIME: (Optional) 선택적으로 최대 응답 대기시간입니다. 기본은 4500 ms 입니다.
 
 1. ACCS 에서 배포한 애플리케이션을 선택하고 좌측의 `배치`를 선택한 다음 하위 `환경변수`의 `추가`를 클릭합니다.
-    ![Alt text](https://monosnap.com/image/KaYxs6pbLlZb5UmNXbMekAXpxK1SsH.png)
+    <kbd>![Alt text](https://monosnap.com/image/KaYxs6pbLlZb5UmNXbMekAXpxK1SsH.png)</kbd>
 
 1. 팝업창이 뜨면 환경변수는 다음과 같이 입력합니다.
-    ![Alt text](https://monosnap.com/image/cRlaQNqBPNC0u0sO6ezwIfEcdTjpQm.png)
+    <kbd>![Alt text](https://monosnap.com/image/cRlaQNqBPNC0u0sO6ezwIfEcdTjpQm.png)</kbd>
 
     이름 | 값
     -- | --
@@ -138,17 +138,17 @@
 
     참조되는 Channel의 URL 및 Secret는 오라클 챗봇이 다음에서 참조합니다.
 
-    ![Alt text](https://monosnap.com/image/OLhxnTLlTlNGuXGfxvjZCr3oEOQHGn.png)
+    <kbd>![Alt text](https://monosnap.com/image/OLhxnTLlTlNGuXGfxvjZCr3oEOQHGn.png)</kbd>
 
 1. 최종적으로 다음와 같은 환경변수가 설정이 되면 됩니다.
 
-    ![Alt text](https://monosnap.com/image/GW9DWefVajd6t0K0RUM57rtcpQbF7k.png)
+    <kbd>![Alt text](https://monosnap.com/image/GW9DWefVajd6t0K0RUM57rtcpQbF7k.png)</kbd>
 
 # 오라클 챗봇에서 카카오 커넥터으로 응답을 위한 설정
 
 이제 오라클 챗봇에서 응답하는 메시지를 받을 수 있는 커넥터가 생성되었기 때문에 이 주소를 업데이트 하겠습니다.
 
-![Alt text](https://monosnap.com/image/RVJ3KtIgK33g2uoVP3XjO7YzDDcwmD.png)
+<kbd>![Alt text](https://monosnap.com/image/RVJ3KtIgK33g2uoVP3XjO7YzDDcwmD.png)</kbd>
 
 오라클 봇의 Outgoing Webhook 부분에 앞에서 생성된 ACCS의 주소를 넣어줍니다.
 그리고 context 로 **`kakao`** 를 줍니다.
