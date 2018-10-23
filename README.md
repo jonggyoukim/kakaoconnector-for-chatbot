@@ -59,13 +59,6 @@
 
     <kbd>![Alt text](https://monosnap.com/image/Vq4x0tEePF1NTLsMTGeI1M8jQc4g5n.png)</kbd>
 
-1. src/main/resources/application.properties 을 열어 수정합니다.
-
-    ~~~
-    oracle.bots.kakao.uri={위에 생성한 채널의 Webhook URL}
-    oracle.bots.kakao.secret={위에 생성한 채널의 Secret Key}
-    ~~~
-
 1. maven 으로 컴파일 합니다. 컴파일 후 target/kakaotalk-0.9.jar 가 생성될 것입니다.
     - Goals은 "package"로 합니다.
 
@@ -119,18 +112,47 @@
     만약 계속 진행중 보인다면 우측의 리로드 아이콘을 클릭하십시오.
 
 이제 카카오톡에서 보내는 메시지를 받을 수 있는 커넥터를 만들었습니다.
-앞으로 할 일은 다음 두 가지입니다.
-1. 오라클 봇에서 커넥터로 응답줄 수 있게 설정하기
-1. 카카오톡에서 커넥터로 메시지 줄 수 있게 연결하기
+앞으로 할 일은 다음 세 가지입니다.
+1. 카카오 커넥터에서 오라클 챗봇으로 메시지 전송을 위한 설정
+1. 오라클 챗봇에서 카카오 커넥터으로 응답을 위한 설정
+1. 카카오톡에서 카카오 커넥터로 메시지 전송을 위한 설정
 
-# 오라클 챗봇 커넥터로 응답하게 업데이트 하기
+# 카카오 커넥터에서 오라클 챗봇으로 메시지 전송을 위한 설정
+
+카카오 커넥터에서 오라클 챗봇으로 메시지를 전송하기 위해서 앞에서 배포한 ACCS에 다음과 같은 환경변수를 설정합니다.
+    - BOT_URL : 오라클 챗봇에서 생성한 Channel의 URL입니다.
+    - BOT_SECRET : 오라클 챗봇에서 생성한 Channel의 Secret 입니다.
+    - WAIT_TIME: (Optional) 선택적으로 최대 응답 대기시간입니다. 기본은 4500 ms 입니다.
+
+1. ACCS 에서 배포한 애플리케이션을 선택하고 좌측의 `배치`를 선택한 다음 하위 `환경변수`의 `추가`를 클릭합니다.
+    ![Alt text](https://monosnap.com/image/KaYxs6pbLlZb5UmNXbMekAXpxK1SsH.png)
+
+1. 팝업창이 뜨면 환경변수는 다음과 같이 입력합니다.
+    ![Alt text](https://monosnap.com/image/cRlaQNqBPNC0u0sO6ezwIfEcdTjpQm.png)
+
+    이름 | 값
+    -- | --
+    BOT_URL | Channel의 Wehbook URL
+    BOT_SECRET | Channel의 Secret Key
+    WAIT_TIME | milisecond 값 (기본 4500)
+
+    참조되는 Channel의 URL 및 Secret는 오라클 챗봇이 다음에서 참조합니다.
+
+    ![Alt text](https://monosnap.com/image/OLhxnTLlTlNGuXGfxvjZCr3oEOQHGn.png)
+
+1. 최종적으로 다음와 같은 환경변수가 설정이 되면 됩니다.
+
+    ![Alt text](https://monosnap.com/image/GW9DWefVajd6t0K0RUM57rtcpQbF7k.png)
+
+# 오라클 챗봇에서 카카오 커넥터으로 응답을 위한 설정
 
 이제 오라클 챗봇에서 응답하는 메시지를 받을 수 있는 커넥터가 생성되었기 때문에 이 주소를 업데이트 하겠습니다.
 
 ![Alt text](https://monosnap.com/image/RVJ3KtIgK33g2uoVP3XjO7YzDDcwmD.png)
 
 오라클 봇의 Outgoing Webhook 부분에 앞에서 생성된 ACCS의 주소를 넣어줍니다.
-그리고 context 로 "kakao"를 줍니다.
+그리고 context 로 **`kakao`** 를 줍니다.
+
 ~~~
 https://kakaotalk-xxxxxx.oraclecloud.com:443/kakao
 ~~~
@@ -138,7 +160,7 @@ https://kakaotalk-xxxxxx.oraclecloud.com:443/kakao
 그리고 하위의 Channel Enabled 를 true 로 합니다.
 
 
-# 카카오 플러스 친구
+# 카카오톡에서 카카오 커넥터로 메시지 전송을 위한 설정
 
 1. 우선 카카오톡과 오라클 챗봇을 연결하기 위해서는 플러스 친구 아이디가 필요합니다. https://business.kakao.com/ 에 접속해서 플러스 친구를 만듭니다.
 

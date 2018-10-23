@@ -51,7 +51,7 @@ import oracle.cloud.bots.kakao.model.Photo;
  */
 @RestController
 public class KakaoController {
-	private static int WAIT_TIME =4500;
+	private int wait_time = 4500;
 
 //	@Value("${oracle.bots.kakao.uri}")
 	private String botUri;
@@ -69,6 +69,20 @@ public class KakaoController {
 	private static Mac mac;
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	public KakaoController() {
+		botUri = System.getenv("BOT_URL");
+		botSecret = System.getenv("BOT_SECRET");
+		String _time = System.getenv("WAIT_TIME");
+		if(_time != null && _time.length() > 0){
+			try {
+				wait_time = Integer.parseInt(_time);
+			}catch(Exception e) {
+				wait_time = 4500;
+				e.printStackTrace();
+			}
+		}
+	}
 
 	@RequestMapping("/")
 	public String index() {
@@ -130,12 +144,12 @@ public class KakaoController {
 	@RequestMapping(value = "/message", method = RequestMethod.POST)
 	@ResponseBody
 	public String message(@RequestHeader Map<String, Object> headers, @RequestBody Map<String, Object> bodyMap) {
-		botUri = System.getenv("BOT_URL");
-		botSecret = System.getenv("BOT_SECRET");
+
 		
 		logger.info("\n\n\n/message -----------------------------------------");
 		logger.info("/message botUri=[" + botUri + "]");
 		logger.info("/message secret=[" + botSecret + "]");
+		logger.info("/message waittime=[" + wait_time + "]");
 		logger.info("/message message body=[" + bodyMap + "]");
 
 			
@@ -186,7 +200,7 @@ public class KakaoController {
 						// 응답이 올 때 까지 기다림 4.2초
 						long t1 = System.currentTimeMillis();
 
-						response = queue.poll(WAIT_TIME, TimeUnit.MILLISECONDS);
+						response = queue.poll(wait_time, TimeUnit.MILLISECONDS);
 
 						long t2 = System.currentTimeMillis();
 						logger.info("응답시간(타임아웃:5초) : " + df.format(t2 - t1));
