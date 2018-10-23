@@ -3,7 +3,7 @@
 오라클 챗봇에서는 Facebook, Webhook, Web, iOS, Android등의 여러가지 타입의 채널을 통해 SNS와 연결할 수 있습니다. 카카오톡은  webhook 의 채널 방식을 통해 연결이 가능합니다. 
 기본적으로 카카오톡의 API는 request/response 방식의 동기화 방식입니다. 이에 반해 오라클 챗봇의 webhook은 비동기 방식입니다. 따라서 카카오톡의 동기와 오라클 챗봇의 비동기를 서로 연결해 줄 필요가 있습니다.
 
-![Alt text](https://monosnap.com/image/c0oS6FmYVhCD90ZydpoTlXmkMDX0Bt)
+![Alt text](https://monosnap.com/image/S8xaIHOIBIeLqXhySWncyj1y9Sg79g)
 
 다음에 설명드릴 항목은 카카오톡과 오라클 챗봇의 동기/비동기 방식을 서로 연결할 커넥터에 대한 설명입니다.
 
