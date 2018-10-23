@@ -148,7 +148,7 @@
 
 이제 오라클 챗봇에서 응답하는 메시지를 받을 수 있는 커넥터가 생성되었기 때문에 이 주소를 업데이트 하겠습니다.
 
-<kbd>![Alt text](https://monosnap.com/image/RVJ3KtIgK33g2uoVP3XjO7YzDDcwmD.png)</kbd>
+<kbd>![Alt text](https://monosnap.com/image/rI3luO9TlNtd7CjlA9vK4lkBhCu3jm.png)</kbd>
 
 오라클 봇의 Outgoing Webhook 부분에 앞에서 생성된 ACCS의 주소를 넣어줍니다.
 그리고 context 로 **`kakao`** 를 줍니다.
